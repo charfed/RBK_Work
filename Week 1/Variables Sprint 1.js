@@ -43,7 +43,7 @@ var Guesscounter = GuessNumb()
     else if (n === guess && Guesscounter === 1) {
         numb = 0
         tries = 0
-        return 'Congratulations! You guessed my number on the first try! and your score is a '+score +' /// good job !😁 ///' ;
+        return 'Congratulations! You guessed my number on the first try! and your score is a '+score +' /// great job !😁 ///' ;
     }    
     else if (n === guess && score > 60) {
         numb = 0
@@ -57,21 +57,21 @@ var Guesscounter = GuessNumb()
         numb = 0
         tries = 0
         guess = randInt(upperbound)
-        return 'You guessed my number in '+Guesscounter+' guesses , and your score is a '+score+' /// better luck next time ! 😉 ///' ;    
+        return 'You guessed my number in '+Guesscounter+' guesses , and your score is a '+score+' /// better luck next time ! 😣 ///' ;    
      }
            
     else if(n < guess) {
         Guesscounter;
         tries = tries - 1
         score = score - 20
-        console.log(" hint : your guess is too low !")
+        console.log(" hint : your guess is too low 😉 !")
         return " Nope! That wasnt it ! ---> number of tries left " + tries;
     }  
     else if(n > guess) {
         Guesscounter;
         tries = tries - 1
         score = score - 20
-        console.log(" hint : your guess is too low !") 
+        console.log(" hint : your guess is too high 😉 !") 
         return " Nope! That wasnt it ! ---> number of tries left " + tries;
     }  
       
