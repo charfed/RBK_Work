@@ -2,6 +2,13 @@
 // ex 5-6-7-8-9-10-11-12
 
 var numb = 0
+var upperbound = 10
+var guess = randInt(upperbound)
+var tries = 5
+var score = 100
+
+
+
 function GuessNumb() {
     numb = numb + 1
     return numb
@@ -11,10 +18,15 @@ function randInt(n) {
     return Math.floor(Math.random() * (n + 1))
 }
 
-var upperbound = 10
-var guess = randInt(upperbound)
-var tries = 5
-var score = 100
+
+function resetGame() {
+    numb = 0
+    upperbound = 10
+    tries = 5
+    score = 100   
+}
+
+
 function guessMyNumber(n) {
 var Guesscounter = GuessNumb()
 
@@ -25,38 +37,32 @@ var Guesscounter = GuessNumb()
     // WIP (Work in progress)
     
     if(Guesscounter > tries) {
-        numb = 0
-        tries = 0
         upperBound = upperbound -1
-        return 'sorry but you have used all of your tries ! , the correct number is '+guess +' and your score is a '+score+' /// this is disappointing friend !😒 ///';
+        guess = randInt(upperbound)
+        return 'sorry but you have used all of your tries ! , the correct number is '+guess +' and your score is a '+score+' /// this is disappointing my friend !😒 ///';
     }
     if (n > upperbound) {
-        numb = 0
-        tries = 0
         return 'Out of bounds! Please try a number between 0 and ' + upperbound;
     }
     else if (n === undefined || n === null) {
-        numb = 0
-        tries = 0
-        return "please enter a guess"
+        return "please enter a guess ... ! 😡"
     }
     else if (n === guess && Guesscounter === 1) {
-        numb = 0
-        tries = 0
+        guess = randInt(upperbound)
+        resetGame()
         return 'Congratulations! You guessed my number on the first try! and your score is a '+score +' /// great job !😁 ///' ;
     }    
     else if (n === guess && score > 60) {
-        numb = 0
-        tries = 0
-        guess = randInt(upperbound)
         upperbound = upperbound + 1
+        guess = randInt(upperbound)
+        resetGame()
         return 'You guessed my number in '+Guesscounter+' guesses , and your score is a '+score +' /// not bad !😊 ///';
 
      }
      else if (n === guess && score < 60) {
-        numb = 0
-        tries = 0
+        upperbound = upperbound + 1
         guess = randInt(upperbound)
+        resetGame()
         return 'You guessed my number in '+Guesscounter+' guesses , and your score is a '+score+' /// better luck next time ! 😣 ///' ;    
      }
            
