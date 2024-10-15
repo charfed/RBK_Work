@@ -330,15 +330,18 @@ function iterateAndLogWithFor(n) {
             
             // better solution ...
 
-            function sumOfFirstAndLast(number){
+            function sumOfFirstAndLastFor(number){
             var last = number%10
             var first = 0
-                while(number >=10){
-                    number = Math.floor(number/10) 
+            if(number < 10 ) {
+                return number
+            }
+                for(;number >=10;number = Math.floor(number/10)){ 
                 }
                 first = number
                 return first + last
             }
+            
 
 
          

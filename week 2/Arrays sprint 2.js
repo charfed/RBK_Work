@@ -243,10 +243,31 @@ function duplicateArrayElements(arr) {
 //   15. Write a function that flattens a nested array and returns 
 //   a new array with all the elements at the top-level.
 
-function flattenArray1(arr) {
+// build-in method
+
+function flattenArray(arr) {
     var NewArr = []
     return NewArr = arr.flat(Infinity)
 }
+
+// second method
+
+// function flattenArray2(arr){
+//     var NewArr = []
+//     var el = 0
+//     for (var i = 0; i < arr.length; i++) {
+//         if (Array.isArray(arr[i])) {
+         
+//             el = arr[i].flat()
+//             NewArr.push(el)
+//         }
+//         else 
+//             el = arr[i]
+//             NewArr.push(el)
+//     }
+//     return NewArr
+// }
+
 
 // 16. Write a function that removes duplicate elements from an 
 // array and returns a new array with only the unique elements
