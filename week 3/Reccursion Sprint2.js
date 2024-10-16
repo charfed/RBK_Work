@@ -107,4 +107,9 @@ function countChars(string, char,count = 0) {
         return greatestCommonDivisor(number2,number1%number2)
      }  
 
+    // 8.Write a function called lowestCommonMultiple that takes two numbers
+    // as parameters and returns lowest common multiple Note: Assume
+    // that the two numbers are greater than or equal to 2.
+
+    
      
