@@ -181,5 +181,3 @@ while(i < string.length) {
          return index
          
 } 
-
-

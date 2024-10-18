@@ -8,14 +8,12 @@ function isPropertyPresent(object,key){
     if(object[key]){
         return true
     }
-    else return false
+    return false
 }
 
 // 2.Write a function called getAllKeys that takes an object as 
 // a parameter and returns an array of keys of all the properties
 // in the object.
-
-
 
 function getAllKeys(object){  
     return Object.keys(object)
@@ -28,9 +26,6 @@ function getAllKeys2(object){
     }
     return arr
 }
-
-
-
 
 // 3.Write a function called getAllValues that takes an object
 //  as a parameter and returns an array of all the values from 
@@ -81,19 +76,18 @@ function extend(obj1,obj2){
 // object.
 
 function countAllCharacters(string){ 
-    var obj = {}
+var obj = {}
     if(string.length===0){
-        return obj
+        return {}
     }
-    for(var char of string){
-        if(obj[char]){
-            obj[char]=obj[char]+1
+    for(var key of string){
+        if(obj[key]){
+            obj[key]++
         }
-        else {
-            obj[char]=1
-        }
+        else obj[key]=1
     }
-    return obj   
+
+return obj
 }
 
 // 7.Write a function called countWords that takes a string as a
@@ -102,16 +96,13 @@ function countAllCharacters(string){
 // If the string is empty it should return an empty object.
 
 function countWords(string){
+var word = string.split(' ')
 var obj = {}
-var sentence = string.split(' ')
-    if (string.length===0){
-        return obj
-    }
-    for (var word of sentence){
-        if(obj[word]){
-            obj[word]++
+    for(var key in word){
+        if(obj[key]){
+            obj[key]++
         }
-        else obj[word]=1
+        else {obj[key]=1}
     }
     return obj
 }
@@ -133,6 +124,6 @@ return arr
 // an object and an array. It then returns a new object with properties 
 // from the passed object whose keys were found in the array as elements.
 
-function select(object ,array){
+// function select(object ,array){
     
-}
+// }
